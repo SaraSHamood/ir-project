@@ -1,0 +1,37 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.page-container {
+  height: 100%;
+}
+
+.search {
+  padding: 2rem;
+}
+
+:host::ng-deep .p-autocomplete {
+  width: 100%;
+
+  .p-inputtext {
+    width: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+span {
+  flex: 1;
+  background-color: var(--D-grey);
+  padding: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--primary-bg) !important;
+  color: var(--primary);
+  font-weight: bolder;
+  border: 1px solid var(--primary);
+}

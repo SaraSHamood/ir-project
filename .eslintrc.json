@@ -1,0 +1,135 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "project": ["tsconfig.json"],
+    "sourceType": "module"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "plugins": [
+        "simple-import-sort",
+        "import",
+        "unused-imports",
+        "change-detection-strategy",
+        "rxjs"
+      ],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "rxjs/no-async-subscribe": "error",
+        "rxjs/no-ignored-observable": "error",
+        "rxjs/no-nested-subscribe": "error",
+        "rxjs/no-unbound-methods": "error",
+        "rxjs/throw-error": "error",
+        "rxjs/no-unsafe-takeuntil": "error",
+        "rxjs/no-subscribe-handlers": "error",
+        "rxjs/no-unsafe-subject-next": "error",
+        "rxjs/no-topromise": "error",
+        "rxjs/no-internal": "error",
+        "rxjs/no-redundant-notify": "error",
+        "rxjs/no-subclass": "error",
+        "change-detection-strategy/on-push": "error",
+        "simple-import-sort/exports": "warn",
+        "import/first": "warn",
+        "import/newline-after-import": "warn",
+        "import/no-duplicates": "error",
+        "simple-import-sort/imports": [
+          "warn",
+          {
+            "groups": [
+              ["^\\w"],
+              ["^\\u0000"],
+              ["^@?nest"],
+              ["^\\u0000"],
+              ["^@?bootstrap"],
+              ["^\\u0000"],
+              ["^@?common"],
+              ["^\\u0000"],
+              ["^@?modules"],
+              ["^\\u0000"],
+              ["^@?generated"],
+              ["^\\u0000"],
+              ["^@?\\w"],
+              ["^\\u0000"],
+              ["^src"],
+              ["^\\u0000"],
+              ["^\\u0000"],
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
+            ]
+          }
+        ],
+        "no-duplicate-imports": "error",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/explicit-function-return-type": "warn",
+        "@typescript-eslint/typedef": [
+          "warn",
+          {
+            "variableDeclaration": true,
+            "parameter": true,
+            "propertyDeclaration": true
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "warn",
+          {
+            "selector": "variable",
+            "format": ["camelCase", "UPPER_CASE"]
+          },
+          {
+            "selector": "method",
+            "format": ["camelCase"]
+          },
+          {
+            "selector": "property",
+            "format": ["camelCase", "UPPER_CASE"]
+          },
+          {
+            "selector": "function",
+            "format": ["camelCase"]
+          },
+          {
+            "selector": "typeLike",
+            "format": ["PascalCase"]
+          }
+        ],
+        "no-console": "warn",
+        "unused-imports/no-unused-imports": "error",
+        "@typescript-eslint/no-unused-vars": "off",
+        "no-unused-vars": "error",
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "ir",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "ir",
+            "style": "kebab-case"
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended",
+        "plugin:@angular-eslint/template/accessibility"
+      ],
+      "rules": {}
+    }
+  ]
+}

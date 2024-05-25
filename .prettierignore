@@ -1,0 +1,9 @@
+**/dist
+node_modules
+.vscode
+.git
+**/i18n.generated.ts
+/coverage
+
+.angular
+

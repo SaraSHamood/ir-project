@@ -1,0 +1,72 @@
+{
+    "cSpell.words": [
+      "primeng",
+      "primeicons",
+      "devkit",
+    ],
+
+    "material-icon-theme.folders.associations": {
+      "adapters": "resolver",
+      "adapter": "resolver",
+
+      "entities": "database",
+      "entity": "database",
+
+      "DTOs": "prisma",
+      "DTO": "prisma",
+
+      "transformers": "typescript",
+      "transformer": "typescript",
+
+      "dashboard": "admin",
+      "dashboards": "admin",
+
+      "request": "connection",
+      "requests": "connection",
+
+      "paginations": "mappings",
+      "pagination": "mappings",
+
+      "tables": "interface",
+      "table": "interface",
+
+      "buttons": "other",
+      "button": "other",
+
+      "charts": "moon",
+      "chart": "moon",
+
+      "footer": "context",
+      "navbar": "context",
+      "sidebar": "context",
+
+      "loaders": "update",
+      "loader": "update",
+
+      "badges": "theme",
+      "badge": "theme",
+
+      "tooltips": "messages",
+      "tooltip": "messages",
+
+      "gifs": "mojo",
+      "gif": "mojo",
+
+      "login": "coverage",
+      "sign-up":"custom",
+
+      "logo": "images",
+
+      "interceptor": "middleware",
+      "interceptors": "middleware",
+    },
+
+    "material-icon-theme.files.associations": {
+      "*.model.ts": "ngrx-reducer",
+      "*.entity.ts": "ngrx-entity",
+      "*.dto.ts": "ngrx-effects",
+      "*.adapter.ts": "ngrx-state",
+      "*.config.ts": "craco",
+      "**.md": "readme",
+  }
+  }

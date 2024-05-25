@@ -1,0 +1,16 @@
+<div
+  class="card-style d-flex flex-column align-items-start"
+  [ngClass]="{ 'has-shadow': hasShadow, 'card-pb': noPaddingBottom }"
+>
+  <!-- HEADER -->
+  <div class="d-flex w-100 justify-content-between p-lr-16px">
+    <h4 *ngIf="cardTitle">
+      {{ cardTitle }}
+    </h4>
+
+    <ng-content select=".card-header-item"></ng-content>
+  </div>
+
+  <!-- CONTENT -->
+  <ng-content select=".card-content"></ng-content>
+</div>

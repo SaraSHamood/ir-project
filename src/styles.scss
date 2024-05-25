@@ -1,0 +1,135 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary: #188ac0;
+  --primary-bg: #188ac033;
+
+  --secondary: #2c3b97;
+  --secondary-bg: #2c3b9733;
+  --secondary-bg-light: #f1f1f5;
+
+  --accent: #7366ff;
+  --accent-bg: #7366ff33;
+  --accent-light: #cbc6ff;
+
+  --grey-text: #2f2f3b;
+  --5A-grey: #5a5a5a;
+  --75-grey: #757589;
+  --89-grey: #898989;
+  --A3-grey: #a3a3a3;
+  --A7-grey: #a7a8ac;
+  --A8-grey: #a8a9ad;
+  --9-grey: #999;
+  --C-grey: #ccc;
+  --D-grey: #ddd;
+  --D3-grey: #d3d3d3;
+  --EA-grey: #eaedef;
+  --DF-grey: #dfdfdf;
+  --E-grey: #eeeeee;
+  --app-background: #e9edf2;
+
+  --19-black: #191919;
+  --dark-text: #262932;
+  --2C-black: #2c323f;
+  --3-black: #333333;
+  --4-black: #444444;
+  --semi-dark: #59667a;
+  --blue-black: #0c5b7e;
+
+  --F-white: #fff;
+  --FE-white: #fefefe;
+  --F9-white: #f9f9fa;
+  --F8-white: #f8f8f9;
+  --F3-white: #f3f3f3;
+  --F1-white: #f1f1f1;
+  --EA-white: #eaeaea;
+  --DF-white: #ddddff;
+
+  --red: #f85d5d;
+  --red-dark: #df0f34;
+  --red-bg: #f85d5d33;
+  --red-light-bg: #dd999933;
+
+  --green: #3ec764;
+  --green-bg: #3ec76440;
+  --green-crystal: #26e7a6;
+
+  --purple: #690db1;
+  --purple-bg: #690db140;
+
+  --yellow: #f1c857;
+  --yellow-bg: #f1c85725;
+  --light-yellow: #ecf01c;
+  --light-yellow-bg: #ecf01c20;
+
+  --dark-yellow: #c4c73e;
+  --dark-yellow-bg: #c4c73e40;
+
+  --male-blue: #4680ff;
+  --male-blue-bg: #4680ff33;
+
+  --light-pink: #F654B6;
+  --female-pink: #e741ae;
+  --female-pink-bg: #e741ae33;
+
+  --deep-dark-blue: #2e2f47;
+  --dark: #262932;
+  --dark-separator: #374558;
+
+  --cyan: #16c7f9;
+  --cyan-bg: #16c7f933;
+
+  --lime: #91cc75;
+  --lime-bg: #91cc7533;
+
+  --cumin: #9b9f14;
+  --cumin-bg: #9b9f1425;
+
+  --inpatient: #6a81cd;
+  --inpatient-2: #b1c2f9;
+  --outpatient: #91cc75;
+  --outpatient-2: #91cc7580;
+  --outpatient-3: #91cc7550;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  height: 100vh;
+  width: 100vw !important;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--app-background);
+  display: block;
+  font-family: 'Inter', sans-serif;
+}
+
+::selection {
+  background: var(
+    --primary-bg
+  ); /* Change this to your desired background color */
+  color: var(
+    --primary
+  ); /* Optional: Change the text color to ensure it's readable against the background */
+  text-shadow: 0 0 1rem var(--male-blue-bg); /* Apply a text shadow */
+}
+
+::-moz-selection {
+  background: var(
+    --primary-bg
+  ); /* Change this to your desired background color */
+  color: var(
+    --primary
+  ); /* Optional: Change the text color to ensure it's readable against the background */
+  text-shadow: 0 0 1rem var(--male-blue-bg); /* Apply a text shadow */
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 0px;
+  background-color: var(--app-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary) !important;
+}

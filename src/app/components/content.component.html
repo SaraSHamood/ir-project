@@ -1,0 +1,68 @@
+<div
+  class="page-container d-flex justify-content-center align-items-center w-100 gap-1rem"
+  style="padding: 1rem"
+>
+  <div class="d-flex flex-column gap-1rem flex-1">
+    <ir-content-card
+      [cardTitle]="'Search Field'"
+      [noPaddingBottom]="false"
+      class="flex-1"
+    >
+      <ng-container class="card-content">
+        <div
+          class="w-100 height-100 d-flex flex-column gap-1rem align-items-center justify-content-center search"
+        >
+          <div class="w-100 d-flex gap-1rem">
+            <span
+              [ngClass]="datasetOne ? 'active' : ''"
+              (click)="setDataset(true)"
+              tabindex="0"
+              (keydown.enter)="setDataset(true)"
+            >
+              Dataset 1
+            </span>
+            <span
+              [ngClass]="datasetOne ? '' : 'active'"
+              (click)="setDataset(false)"
+              tabindex="0"
+              (keydown.enter)="setDataset(false)"
+            >
+              Dataset 2
+            </span>
+          </div>
+
+          <p-inputGroup>
+            <p-inputGroupAddon>
+              <i class="pi pi-search"></i>
+            </p-inputGroupAddon>
+            <p-autoComplete
+              id="service-name"
+              class="w-100"
+              [dropdown]="false"
+              (completeMethod)="search()"
+              [suggestions]="filteredSignal()"
+              [(ngModel)]="field"
+            >
+            </p-autoComplete>
+          </p-inputGroup>
+        </div>
+      </ng-container>
+    </ir-content-card>
+
+    <div irDynamicHeight="0.65">
+      <ir-content-card [cardTitle]="'Tests Result'" [noPaddingBottom]="false">
+        <ng-container class="card-content">
+          <ir-tests-table [value]="displayedData()" />
+        </ng-container>
+      </ir-content-card>
+    </div>
+  </div>
+
+  <section class="flex-1" irDynamicHeight="0.95">
+    <ir-content-card [cardTitle]="'Output Result'" [noPaddingBottom]="false">
+      <ng-container class="card-content">
+        <ir-results-table [value]="displayedData()" />
+      </ng-container>
+    </ir-content-card>
+  </section>
+</div>
