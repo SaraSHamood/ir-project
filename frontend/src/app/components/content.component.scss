@@ -35,3 +35,18 @@ span {
   font-weight: bolder;
   border: 1px solid var(--primary);
 }
+:host::ng-deep .p-autocomplete {
+  width: 100%;
+
+  .p-inputtext {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 100%;
+  }
+}
+
+:host ::ng-deep .p-autocomplete-panel > ul {
+  margin: 0;
+  padding: 0.5rem 0;
+  width: 40vw;
+}

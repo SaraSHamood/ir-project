@@ -19,7 +19,7 @@
               tabindex="0"
               (keydown.enter)="setDataset(true)"
             >
-              Dataset 1
+              Touche Dataset
             </span>
             <span
               [ngClass]="datasetOne ? '' : 'active'"
@@ -27,7 +27,7 @@
               tabindex="0"
               (keydown.enter)="setDataset(false)"
             >
-              Dataset 2
+              Antique Dataset
             </span>
           </div>
 
@@ -39,9 +39,10 @@
               id="service-name"
               class="w-100"
               [dropdown]="false"
-              (completeMethod)="search()"
+              (completeMethod)="autoComplete()"
               [suggestions]="filteredSignal()"
               [(ngModel)]="field"
+              (keydown.enter)="search()"
             >
             </p-autoComplete>
           </p-inputGroup>

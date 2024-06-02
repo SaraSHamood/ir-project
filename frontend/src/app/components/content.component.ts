@@ -2,7 +2,7 @@
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
-import { take, tap } from 'rxjs';
+import { catchError, of, take, tap } from 'rxjs';
 
 import { NgClass, NgIf } from '@angular/common';
 import {
@@ -50,15 +50,33 @@ export class ContentComponent {
   constructor(private readonly _searchService: SearchService) {}
 
   public search(): void {
-    console.log('Searched for: ', this.field);
-
     this._searchService
-      .searchDataset(this.field, this.datasetOne)
+      .searchDataset(this.field, this.datasetOne, false, false)
       .pipe(
         tap((res) => {
           this.displayedData.set(res);
         }),
         take(1),
+        catchError(() => {
+          this.displayedData.set(['Dataset', 'Data']);
+          return of();
+        }),
+      )
+      .subscribe();
+  }
+
+  public autoComplete(): void {
+    this._searchService
+      .searchSuggestions(this.field, this.datasetOne)
+      .pipe(
+        tap((res) => {
+          this.filteredSignal.set(res);
+        }),
+        take(1),
+        catchError(() => {
+          this.filteredSignal.set(['hello', 'world']);
+          return of();
+        }),
       )
       .subscribe();
   }
