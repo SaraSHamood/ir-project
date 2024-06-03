@@ -18,8 +18,8 @@ antique_spelling_file_path = f'{antique_path}spelling.pkl'
 antique_kmeans_file_path = f'{antique_path}kmeans.pkl'
 antique_terms_file_path = f'{antique_path}terms.pkl'
 antique_queries_file_path = f'{antique_path}queries.tsv'
-antique_doc_i_file = f'../../antique{doc_path}'
-antique_key_i_file = f'../../antique{key_path}'
+antique_doc_i_file = f'../../../../antique{doc_path}'
+antique_key_i_file = f'../../../../antique{key_path}'
 
 # TOUCHE DATASET    
 touche_model_file_path = f'{touche_path}model.pkl'
