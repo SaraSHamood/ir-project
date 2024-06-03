@@ -14,5 +14,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class ResultsTableComponent {
   @Input({ required: true }) value!: Array<unknown>;
 
-  readonly COLUMNS: Array<string> = ['Doc id'];
+  readonly COLUMNS: Array<string> = ['Documents'];
 }

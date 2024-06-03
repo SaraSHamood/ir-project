@@ -56,7 +56,7 @@ export class SearchService {
     });
 
     return this._http.get<Array<string>>(
-      `${environment.CURRENT_DOMAIN}${this.tag}`,
+      `${environment.TAGS_DOMAIN}${this.tag}`,
       {
         params: queryParam,
       },

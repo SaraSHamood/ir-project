@@ -4,10 +4,11 @@ importlib.import_module('matching_ranking')
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
+from typing import List
 import numpy as np
 from lib import doc, get_tfidf_matrix, get_kmeans
 
-def get_topic_tags(kmeans: KMeans, terms: list, lab_idx, top_n=5):
+def get_topic_tags(kmeans: KMeans, terms: List[str], lab_idx, top_n=5):
     order_centroids = kmeans.cluster_centers_.argsort()[:, ::-1]
     return [str(terms[idx]) for idx in order_centroids[lab_idx, :top_n]]
 

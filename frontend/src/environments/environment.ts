@@ -5,10 +5,12 @@
 
 const DOMAIN = {
   serverDev: 'http://127.0.0.1:8000',
+  serverDev2: 'http://127.0.0.1:3500',
 };
 
 export const environment = {
   type: 'dev',
   production: false,
   CURRENT_DOMAIN: DOMAIN.serverDev,
+  TAGS_DOMAIN: DOMAIN.serverDev2,
 };

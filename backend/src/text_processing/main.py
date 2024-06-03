@@ -47,10 +47,7 @@ async def text_processing_service(
     clustering: bool = False,
 ):  
     indexing_service_url = 'http://localhost:3000'
-    
-    print(clustering)
-    print(dataset)
-        
+
     async with httpx.AsyncClient() as client:
         response = await client.post(
             url=indexing_service_url,
