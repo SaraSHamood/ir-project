@@ -25,7 +25,6 @@ export class SearchService {
       q: query,
       dataset: dataset ? 'touche' : 'antique',
       clustering: clustering,
-      embedding: embedding,
     });
 
     return this._http.get<Array<string>>(`${environment.CURRENT_DOMAIN}`, {
