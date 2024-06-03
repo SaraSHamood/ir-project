@@ -25,7 +25,6 @@ export class SearchService {
       q: query,
       dataset: dataset ? 'touche' : 'antique',
       clustering: clustering,
-      embedding: embedding,
     });
 
     // //! Delete after apis are finished
