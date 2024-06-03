@@ -29,6 +29,16 @@
             >
               Antique Dataset
             </span>
+            <div class="d-flex gap-05rem align-items-center">
+              <label [for]="'clustering'">{{ 'clustering' }}</label>
+              <p-checkbox
+                class="high"
+                [(ngModel)]="this.clustering"
+                [value]="false"
+                inputId="clustering"
+                [binary]="true"
+              ></p-checkbox>
+            </div>
           </div>
 
           <p-inputGroup>
@@ -50,10 +60,10 @@
       </ng-container>
     </ir-content-card>
 
-    <div irDynamicHeight="0.65">
+    <div irDynamicHeight="0.05">
       <ir-content-card [cardTitle]="'Tests Result'" [noPaddingBottom]="false">
         <ng-container class="card-content">
-          <ir-tests-table [value]="displayedData()" />
+          <ir-tests-table [value]="tags()" />
         </ng-container>
       </ir-content-card>
     </div>

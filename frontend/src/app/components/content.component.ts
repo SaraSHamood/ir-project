@@ -2,6 +2,7 @@
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { CheckboxModule } from 'primeng/checkbox';
 import { catchError, of, take, tap } from 'rxjs';
 
 import { NgClass, NgIf } from '@angular/common';
@@ -38,20 +39,23 @@ import { TestsTableComponent } from './tests-table/tests-table.component';
     FormsModule,
     ResultsTableComponent,
     DynamicHeightDirective,
+    CheckboxModule,
   ],
 })
 export class ContentComponent {
   field!: string;
   datasetOne: boolean = true;
+  clustering: boolean = false;
 
   filteredSignal: WritableSignal<Array<string>> = signal([]);
   displayedData: WritableSignal<Array<string>> = signal([]);
+  tags: WritableSignal<Array<string>> = signal([]);
 
   constructor(private readonly _searchService: SearchService) {}
 
   public search(): void {
     this._searchService
-      .searchDataset(this.field, this.datasetOne, false, false)
+      .searchDataset(this.field, this.datasetOne, this.clustering)
       .pipe(
         tap((res) => {
           this.displayedData.set(res);
@@ -59,6 +63,20 @@ export class ContentComponent {
         take(1),
         catchError(() => {
           this.displayedData.set(['Dataset', 'Data']);
+          return of();
+        }),
+      )
+      .subscribe();
+
+    this._searchService
+      .tags(this.field, this.datasetOne)
+      .pipe(
+        tap((res) => {
+          this.tags.set(res);
+        }),
+        take(1),
+        catchError(() => {
+          this.tags.set(['tags', 'Data']);
           return of();
         }),
       )

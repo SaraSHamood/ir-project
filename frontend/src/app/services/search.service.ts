@@ -12,6 +12,7 @@ import { environment } from '../../environments/environment';
 })
 export class SearchService {
   readonly suggestions = '/suggest';
+  readonly tag = '/tags';
 
   constructor(private readonly _http: HttpClient) {}
 
@@ -19,7 +20,6 @@ export class SearchService {
     query: string,
     dataset: boolean,
     clustering: boolean,
-    embedding: boolean,
   ): Observable<Array<string>> {
     const queryParam = new HttpParams().appendAll({
       q: query,
@@ -43,6 +43,20 @@ export class SearchService {
 
     return this._http.get<Array<string>>(
       `${environment.CURRENT_DOMAIN}${this.suggestions}`,
+      {
+        params: queryParam,
+      },
+    );
+  }
+
+  public tags(query: string, dataset: boolean): Observable<Array<string>> {
+    const queryParam = new HttpParams().appendAll({
+      q: query,
+      dataset: dataset ? 'touche' : 'antique',
+    });
+
+    return this._http.get<Array<string>>(
+      `${environment.CURRENT_DOMAIN}${this.tag}`,
       {
         params: queryParam,
       },

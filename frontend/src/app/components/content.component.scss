@@ -50,3 +50,7 @@ span {
   padding: 0.5rem 0;
   width: 40vw;
 }
+:host::ng-deep .high .p-checkbox .p-checkbox-box.p-highlight {
+  border-color: var(--red);
+  background-color: var(--red);
+}

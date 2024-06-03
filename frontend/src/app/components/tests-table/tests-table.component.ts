@@ -12,7 +12,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TestsTableComponent {
-  @Input({ required: true }) value!: Array<unknown>;
+  @Input({ required: true }) value!: Array<string>;
 
-  readonly COLUMNS: Array<string> = ['Recall', 'Precision'];
+  readonly COLUMNS: Array<string> = ['Tags'];
 }
