@@ -4,7 +4,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 const DOMAIN = {
-  serverDev: 'http://localhost:8000',
+  serverDev: 'http://127.0.0.1:8000',
 };
 
 export const environment = {
