@@ -29,8 +29,8 @@ touche_spelling_file_path = f'{touche_path}spelling.pkl'
 touche_kmeans_file_path = f'{touche_path}kmeans.pkl'
 touche_terms_file_path = f'{touche_path}terms.pkl'
 touche_queries_file_path = f'{touche_path}queries.tsv'
-touche_doc_i_file = f'../../../touche{doc_path}'
-touche_key_i_file = f'../../../touche{key_path}'
+touche_doc_i_file = f'../../../../touche{doc_path}'
+touche_key_i_file = f'../../../../touche{key_path}'
 
 # FUNCTIONS #
 
