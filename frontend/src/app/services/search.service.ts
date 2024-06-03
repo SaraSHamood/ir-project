@@ -28,21 +28,6 @@ export class SearchService {
       embedding: embedding,
     });
 
-    // //! Delete after apis are finished
-    // if (datasetChoice) {
-    //   return of([
-    //     { id: 1, title: 'Doe', length: '70 page' },
-    //     { id: 2, title: 'John', length: '70 page' },
-    //     { id: 3, title: 'Jack', length: '70 page' },
-    //   ]);
-    // } else {
-    //   return of([
-    //     { id: 4, title: 'Doe', length: '70 page' },
-    //     { id: 5, title: 'John', length: '70 page' },
-    //     { id: 6, title: 'Jack', length: '70 page' },
-    //   ]);
-    // }
-
     return this._http.get<Array<string>>(`${environment.CURRENT_DOMAIN}`, {
       params: queryParam,
     });
@@ -56,13 +41,6 @@ export class SearchService {
       q: query,
       dataset: dataset ? 'touche' : 'antique',
     });
-
-    // //! Delete after apis are finished
-    // if (datasetChoice) {
-    //   return of(['Hello', 'My', 'Name']);
-    // } else {
-    //   return of(['is', 'S', 'Hamoud']);
-    // }
 
     return this._http.get<Array<string>>(
       `${environment.CURRENT_DOMAIN}${this.suggestions}`,
